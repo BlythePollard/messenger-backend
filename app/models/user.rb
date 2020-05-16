@@ -1,3 +1,3 @@
-class Message < ApplicationRecord
+class User < ApplicationRecord
     has_many :messages
 end

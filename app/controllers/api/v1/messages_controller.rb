@@ -4,7 +4,7 @@ class Api::V1::MessagesController < ApplicationController
     def create
         message = @user.messages.build(message_params)
         if message.save
-            render json: message 
+            render json: message, include: [:user]
         else 
             render json: {error: 'Error creating message'}
         end
@@ -12,18 +12,19 @@ class Api::V1::MessagesController < ApplicationController
 
     def all_messages_index
         messages = Message.all
-        render json: messages
+        render json: messages, include: [:user]
     end
 
-    def index
-        messages = @user.messages
-        render json: messages
-    end
+    # def index
+    #     binding.pry
+    #     messages = @user.messages
+    #     render json: messages, include: [:user]
+    # end
 
     private 
 
     def message_params
-        params.require(:message).permit(:content, :user_id)
+        params.require(:message).permit(:content, :username, :user_id)
     end
 
     def set_user

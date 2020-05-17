@@ -1,5 +1,5 @@
-class MessagesController < ApplicationController
-    before_action :set_user, except: :index
+class Api::V1::MessagesController < ApplicationController
+    before_action :set_user, except: :all_messages_index
 
     def create
         message = @user.messages.build(message_params)
@@ -10,8 +10,13 @@ class MessagesController < ApplicationController
         end
     end
 
-    def index
+    def all_messages_index
         messages = Message.all
+        render json: messages
+    end
+
+    def index
+        messages = @user.messages
         render json: messages
     end
 

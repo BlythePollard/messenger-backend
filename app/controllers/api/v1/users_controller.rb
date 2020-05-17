@@ -1,8 +1,8 @@
-class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
     
     def create
         user = User.find_by(username: params[:username])
-        if user.save
+        if user
             session[:user_id] = user.id
             render json: user
         else 

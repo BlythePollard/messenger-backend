@@ -1,7 +1,7 @@
-##Basic Messenger:
+## Basic Messenger:
 This front-end app works with a Rails API to enable basic message sending between users. It requires a simple login (unauthenticated) in order to post a message. User1 can post a message and see their message added to the chat box. User2, in another browser window, can also see the message that User1 has posted within one second of posting. Both users are able to enjoy two-way messaging with a minimal delay.
 
-##Getting Started:
+## Getting Started:
 Clone the frontend and backend repos (frontend at https://github.com/BlythePollard/messenger-frontend). Navigate to the backend in the terminal. Ensure that dependencies are installed by running 'bundle install', ensure that migrations are completed by running 'rails db:migrate', and seed the two users, user1 and user2, by running 'rails db:seed'.
 
 In one terminal tab, launch the backend using 'rails s'.
@@ -10,7 +10,7 @@ In a second tab, launch the frontend using 'npm start'- allow server to start on
 
 Navigate to http://localhost:3001 to launch the app.
 
-##Usage:
+## Usage:
 Once the application is launched, user will be prompted to sign in. User can sign in with either of the seeded usernames, 'user1' or 'user2'. Once signed in, the user can leave a new message on the chat board.
 
 To view the capability of 2-way chat between users, launch the app again in an incognito browser and sign in as the second user. From here, user1 and user2 can send each other messages that are updated in both windows within 1 second of submission.
